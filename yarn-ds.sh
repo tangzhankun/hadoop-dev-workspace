@@ -1,0 +1,2 @@
+#!/bin/bash
+yarn jar /home/yarn/apache-hadoop-install-dir/home/share/hadoop/yarn/hadoop-yarn-applications-distributedshell-3.3.0-SNAPSHOT.jar -jar /home/yarn/apache-hadoop-install-dir/home/share/hadoop/yarn/hadoop-yarn-applications-distributedshell-3.3.0-SNAPSHOT.jar -shell_command "cat /proc/1/cgroup" -shell_env YARN_CONTAINER_RUNTIME_TYPE=docker -shell_env YARN_CONTAINER_RUNTIME_DOCKER_IMAGE=tangzhankun/tensorflow

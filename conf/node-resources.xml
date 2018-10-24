@@ -1,0 +1,8 @@
+<configuration>
+<!--
+ <property>
+   <name>yarn.nodemanager.resource-type.cmp.com/cmp</name>
+   <value>10</value>
+ </property>
+-->
+</configuration>

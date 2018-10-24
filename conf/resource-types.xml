@@ -1,0 +1,7 @@
+<configuration>
+  <property>
+    <name>yarn.resource-types</name>
+    <value>nec.com/ve,cmp.com/cmp</value>
+  </property>
+
+</configuration>

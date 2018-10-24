@@ -1,0 +1,247 @@
+<?xml version="1.0"?>
+<!--
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License. See accompanying LICENSE file.
+-->
+<configuration>
+    <property>
+        <name>yarn.nodemanager.pluggable-device-framework.enabled</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>yarn.nodemanager.pluggable-device-framework.prefer-customized-scheduler</name>
+        <value>true</value>
+    </property>
+
+    <property>
+        <name>yarn.nodemanager.pluggable-device-framework.device-classes</name>
+        <value>com.nec.NECVEPlugin</value>
+    </property>
+<!--
+        <value>com.nec.NECVEPlugin,org.apache.hadoop.yarn.server.nodemanager.containermanager.resourceplugin.deviceframework.examples.FakeDevicePlugin</value>
+-->
+<!-- Site specific YARN configuration properties -->
+<property>
+        <name>yarn.resourcemanager.scheduler.class</name>
+        <value>org.apache.hadoop.yarn.server.resourcemanager.scheduler.fair.FairScheduler</value>
+    </property>
+    <property>
+        <name>yarn.nodemanager.aux-services</name>
+        <value>mapreduce_shuffle</value>
+        <description>shuffle service that needs to be set for Map Reduce to run </description>
+    </property>
+    <property>
+        <name>yarn.log-aggregation-enable</name>
+        <value>true</value>
+    </property>
+    <property>
+        <description>Where to aggregate logs to.</description>
+        <name>yarn.nodemanager.remote-app-log-dir</name>
+        <value>/tmp/logs</value>
+    </property>
+    <property>
+        <name>yarn.log-aggregation.retain-seconds</name>
+        <value>259200</value>
+    </property>
+    <property>
+        <name>yarn.log-aggregation.retain-check-interval-seconds</name>
+        <value>3600</value>
+    </property>
+    <property>
+        <name>yarn.nodemanager.delete.debug-delay-sec</name>
+        <value>86400</value>
+    </property>
+
+
+
+    <property>
+        <name>yarn.nodemanager.container-executor.class</name>
+        <value>org.apache.hadoop.yarn.server.nodemanager.LinuxContainerExecutor</value>
+    </property>
+    <property>
+        <name>yarn.nodemanager.linux-container-executor.group</name>
+        <value>hadoop</value>
+    </property>
+<property>
+    <name>yarn.nodemanager.linux-container-executor.nonsecure-mode.local-user</name>
+    <value>yarn</value>
+</property>
+
+  <property>
+    <name>yarn.nodemanager.linux-container-executor.nonsecure-mode.limit-users</name>
+    <value>false</value>
+    <description>
+      Whether all applications should be run as the NodeManager process' owner.
+      When false, applications are launched instead as the application owner.
+    </description>
+  </property>
+
+  <property>
+    <name>yarn.nodemanager.runtime.linux.allowed-runtimes</name>
+    <value>default,docker</value>
+    <description>
+      Comma separated list of runtimes that are allowed when using
+      LinuxContainerExecutor. The allowed values are default, docker, and
+      javasandbox.
+    </description>
+  </property>
+
+  <property>
+    <name>yarn.nodemanager.runtime.linux.docker.allowed-container-networks</name>
+    <value>host,none,bridge</value>
+    <description>
+      Optional. A comma-separated set of networks allowed when launching
+      containers. Valid values are determined by Docker networks available from
+      `docker network ls`
+    </description>
+  </property>
+
+  <property>
+    <name>yarn.nodemanager.runtime.linux.docker.default-container-network</name>
+    <value>host</value>
+    <description>
+      The network used when launching Docker containers when no
+      network is specified in the request. This network must be one of the
+      (configurable) set of allowed container networks.
+    </description>
+  </property>
+
+  <property>
+    <name>yarn.nodemanager.runtime.linux.docker.privileged-containers.allowed</name>
+    <value>false</value>
+    <description>
+      Optional. Whether applications are allowed to run in privileged
+      containers.
+    </description>
+  </property>
+
+  <property>
+    <name>yarn.nodemanager.runtime.linux.docker.privileged-containers.acl</name>
+    <value></value>
+    <description>
+      Optional. A comma-separated list of users who are allowed to request
+      privileged contains if privileged containers are allowed.
+    </description>
+  </property>
+
+  <property>
+    <name>yarn.nodemanager.runtime.linux.docker.capabilities</name>
+    <value>CHOWN,DAC_OVERRIDE,FSETID,FOWNER,MKNOD,NET_RAW,SETGID,SETUID,SETFCAP,SETPCAP,NET_BIND_SERVICE,SYS_CHROOT,KILL,AUDIT_WRITE</value>
+    <description>
+      Optional. This configuration setting determines the capabilities
+      assigned to docker containers when they are launched. While these may not
+      be case-sensitive from a docker perspective, it is best to keep these
+      uppercase. To run without any capabilites, set this value to
+      "none" or "NONE"
+    </description>
+  </property>
+
+  <property>
+    <description>
+      Enable services rest api on ResourceManager.
+    </description>
+    <name>yarn.webapp.api-service.enable</name>
+    <value>true</value>
+  </property>
+  <property>
+    <description>
+      Is the registry enabled in the YARN Resource Manager?
+
+      If true, the YARN RM will, as needed.
+      create the user and system paths, and purge
+      service records when containers, application attempts
+      and applications complete.
+
+      If false, the paths must be created by other means,
+      and no automatic cleanup of service records will take place.
+    </description>
+    <name>hadoop.registry.rm.enabled</name>
+    <value>true</value>
+  </property>
+  <property>
+    <description>
+      A comma separated list of hostname:port pairs defining the
+      zookeeper quorum binding for the registry
+    </description>
+    <name>hadoop.registry.zk.quorum</name>
+    <value>localhost:2181</value>
+  </property>
+  <property>
+    <description>
+      The root zookeeper node for the registry
+    </description>
+    <name>hadoop.registry.zk.root</name>
+    <value>/registry</value>
+  </property>
+  <property>
+    <description>
+      Key to set if the registry is secure. Turning it on
+      changes the permissions policy from "open access"
+      to restrictions on kerberos with the option of
+      a user adding one or more auth key pairs down their
+      own tree.
+    </description>
+    <name>hadoop.registry.secure</name>
+    <value>false</value>
+  </property>
+
+ <property>
+    <description>The domain name for Hadoop cluster associated records.</description>
+    <name>hadoop.registry.dns.domain-name</name>
+    <value>ycluster</value>
+  </property>
+
+  <property>
+    <description>The port number for the DNS listener. The default port is 5335.
+    If the standard privileged port 53 is used, make sure start the DNS with jsvc support.</description>
+    <name>hadoop.registry.dns.bind-port</name>
+    <value>5335</value>
+  </property>
+
+  <property>
+    <description>The DNS functionality is enabled for the cluster. Default is false.</description>
+    <name>hadoop.registry.dns.enabled</name>
+    <value>true</value>
+  </property>
+
+  <property>
+    <description>Address associated with the network interface to which the DNS listener should bind.</description>
+    <name>hadoop.registry.dns.bind-address</name>
+    <value>localhost</value>
+  </property>
+
+  <!-- cgroups related -->
+  <property>
+    <name>yarn.nodemanager.linux-container-executor.resources-handler.class</name>
+    <value>org.apache.hadoop.yarn.server.nodemanager.util.CgroupsLCEResourcesHandler</value>
+  </property>
+  <property>
+    <name>yarn.nodemanager.linux-container-executor.cgroups.mount</name>
+    <value>false</value>
+  </property>
+  <property>
+    <name>yarn.nodemanager.linux-container-executor.cgroups.hierarchy</name>
+    <value>/hadoop-yarn</value>
+  </property>
+  <property>
+    <name>yarn.nodemanager.linux-container-executor.cgroups.mount-path</name>
+    <value>/sys/fs/cgroup</value>
+  </property>
+  <property>
+    <name>yarn.nodemanager.resource.percentage-physical-cpu-limit</name>
+    <value>100</value>
+  </property>
+  <property>
+    <name>yarn.nodemanager.linux-container-executor.cgroups.strict-resource-usage</name>
+    <value>false</value>
+  </property>
+</configuration>
