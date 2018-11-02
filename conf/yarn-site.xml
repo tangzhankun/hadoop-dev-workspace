@@ -69,11 +69,11 @@
     </property>
     <property>
         <name>yarn.nodemanager.linux-container-executor.group</name>
-        <value>hadoop</value>
+        <value>NW0021</value>
     </property>
 <property>
     <name>yarn.nodemanager.linux-container-executor.nonsecure-mode.local-user</name>
-    <value>yarn</value>
+    <value>NW0021</value>
 </property>
 
   <property>
@@ -145,6 +145,7 @@
     </description>
   </property>
 
+<!--
   <property>
     <description>
       Enable services rest api on ResourceManager.
@@ -219,7 +220,10 @@
     <value>localhost</value>
   </property>
 
+-->
+
   <!-- cgroups related -->
+<!--
   <property>
     <name>yarn.nodemanager.linux-container-executor.resources-handler.class</name>
     <value>org.apache.hadoop.yarn.server.nodemanager.util.CgroupsLCEResourcesHandler</value>
@@ -244,4 +248,5 @@
     <name>yarn.nodemanager.linux-container-executor.cgroups.strict-resource-usage</name>
     <value>false</value>
   </property>
+-->
 </configuration>

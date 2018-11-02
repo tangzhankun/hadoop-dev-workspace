@@ -23,14 +23,14 @@
     </property>
     <property>
         <name>dfs.name.dir</name>
-        <value>file:///home/yarn/apache-hadoop-install-dir/name</value>
+        <value>file:///home/NW0021/apache-hadoop-install-dir/name</value>
     </property>
     <property>
         <name>dfs.data.dir</name>
-        <value>file:///home/yarn/apache-hadoop-install-dir/data</value>
+        <value>file:///home/NW0021/apache-hadoop-install-dir/data</value>
     </property>
     <property>
         <name>dfs.namenode.http-address</name>
-        <value>192.168.50.191:50070</value>
+        <value>0.0.0.0:50070</value>
     </property>
 </configuration>

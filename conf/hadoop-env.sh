@@ -16,7 +16,7 @@
 # limitations under the License.
 
 # Set Hadoop-specific environment variables here.
-
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.102-4.b14.el7.x86_64
 ##
 ## THIS FILE ACTS AS THE MASTER FILE FOR ALL HADOOP PROJECTS.
 ## SETTINGS HERE WILL BE READ BY ALL HADOOP COMMANDS.  THEREFORE,
@@ -51,7 +51,6 @@
 
 # The java implementation to use. By default, this environment
 # variable is REQUIRED on ALL platforms except OS X!
-export JAVA_HOME=/usr/lib/jvm/java-8-oracle 
 
 # Location of Hadoop.  By default, Hadoop will attempt to determine
 # this location based upon its execution path.
