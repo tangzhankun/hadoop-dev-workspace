@@ -1,0 +1,6 @@
+<configuration>
+  <property>
+    <name>submarine.localization.max-allowed-file-size-mb</name>
+    <value>1024</value>
+  </property>
+</configuration>
