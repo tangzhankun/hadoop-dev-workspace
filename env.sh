@@ -1,10 +1,9 @@
 #!/bin/bash
-#!/bin/bash
 export HADOOP_BASE_DIR=${HOME}/apache-hadoop-install-dir
 export HADOOP_LOG_DIR=${HOME}/apache-hadoop-install-dir/logs
 export HADOOP_PID_DIR=${HADOOP_BASE_DIR}
 export HADOOP_CONF_DIR=${HOME}/apache-hadoop-install-dir/conf
-export HADOOP_COMMON_HOME=${HOME}/apache-hadoop-install-dir/home
+export HADOOP_COMMON_HOME=/opt/code/hadoop/hadoop-dist/target/hadoop-3.3.0-SNAPSHOT
 export HADOOP_HDFS_HOME=${HADOOP_COMMON_HOME}
 export HADOOP_MAPRED_HOME=${HADOOP_COMMON_HOME}
 

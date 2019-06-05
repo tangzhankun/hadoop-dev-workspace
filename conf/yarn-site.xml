@@ -13,6 +13,7 @@
   limitations under the License. See accompanying LICENSE file.
 -->
 <configuration>
+<!--
     <property>
         <name>yarn.nodemanager.pluggable-device-framework.enabled</name>
         <value>true</value>
@@ -26,7 +27,6 @@
         <name>yarn.nodemanager.pluggable-device-framework.device-classes</name>
         <value>com.nec.NECVEPlugin</value>
     </property>
-<!--
         <value>com.nec.NECVEPlugin,org.apache.hadoop.yarn.server.nodemanager.containermanager.resourceplugin.deviceframework.examples.FakeDevicePlugin</value>
 -->
 <!-- Site specific YARN configuration properties -->
