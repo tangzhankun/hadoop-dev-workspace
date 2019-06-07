@@ -10,6 +10,6 @@ java -cp /home/yarn/apache-hadoop-install-dir/conf:/home/yarn/submarine-release/
   --name tf-job-001 \
   --docker_image tangzhankun/tensorflow:demo \
   --input_path hdfs://default/user/yarn/cifar-10-data  \
-  --checkpoint_path hdfs://default//user/yarn/cifar-10-jobdir \
+  --checkpoint_path hdfs://default/user/yarn/cifar-10-jobdir \
   --worker_resources memory=2G,vcores=1  \
   --worker_launch_cmd "cd /cifar10_estimator && python cifar10_main.py --data-dir=%input_path% --job-dir=%checkpoint_path% --num-gpus=0 --train-steps=2"
