@@ -61,8 +61,6 @@
         <value>86400</value>
     </property>
 
-
-
     <property>
         <name>yarn.nodemanager.container-executor.class</name>
         <value>org.apache.hadoop.yarn.server.nodemanager.LinuxContainerExecutor</value>
@@ -145,6 +143,7 @@
     </description>
   </property>
 
+<!--
   <property>
     <description>
       Enable services rest api on ResourceManager.
@@ -218,6 +217,7 @@
     <name>hadoop.registry.dns.bind-address</name>
     <value>localhost</value>
   </property>
+-->
 
   <!-- cgroups related -->
   <property>
