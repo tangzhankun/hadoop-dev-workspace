@@ -1,8 +1,8 @@
 #!/bin/bash
 hdfs dfs -rm -r .yarn/services/tf-job-001
 hdfs dfs -rm -R -f submarine/jobs/tf-job-001
-java -cp /home/yarn/apache-hadoop-install-dir/conf:/home/yarn/submarine-release/0.2.0/hadoop-submarine-dist-0.2.0-hadoop-3.1/hadoop-submarine-all-0.2.0-hadoop-3.1.jar \
-  org.apache.hadoop.yarn.submarine.client.cli.Cli job run \
+CLASSPATH=${CLASSPATH}:/home/yarn/apache-hadoop-install-dir/conf:/home/yarn/submarine-release/0.2.0/hadoop-submarine-dist-0.2.0-hadoop-3.1/hadoop-submarine-all-0.2.0-hadoop-3.1.jar \
+java org.apache.hadoop.yarn.submarine.client.cli.Cli job run \
   --env DOCKER_JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/ \
   --verbose \
   --env DOCKER_HADOOP_HDFS_HOME=/hadoop-3.1.2 \
